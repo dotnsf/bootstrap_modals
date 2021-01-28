@@ -1,0 +1,37 @@
+
+<div class="modal bd-example-modal-lg fade" id="myModal" tabindex="-1" role="dialog" aria-labbelledby="myModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">共有ダイアログ</h4>
+      </div>
+      <div class="modal-body" id="mymodal-body">
+        <div>
+          <input type="text" name="text" class="form-control" id="text"/>
+        </div>
+      </div>
+      <div class="modal-footer btn-center">
+        <button type="button" class="btn modal_button" data-toggle="modal" onClick="myModalClose();">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+var __callback = null;
+
+function myModalOpen( func ){
+  __callback = func;
+  $('#myModal').modal();
+}
+
+function myModalClose(){
+  $('body').removeClass( 'modal-open' );
+  $('.modal-backdrop').remove();
+  $('#myModal').modal( 'hide' );
+
+  var text = $('#text').val();
+
+  __callback( text );
+}
+</script>

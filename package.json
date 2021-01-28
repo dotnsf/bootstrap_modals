@@ -1,0 +1,15 @@
+{
+    "name": "bootstrap_modals",
+    "version": "0.0.1",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "dependencies": {
+        "ejs": "2.5.5",
+        "express": "4.17.x"
+    },
+    "repository": {},
+    "engines": {
+        "node": "10.x"
+    }
+}
